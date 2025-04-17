@@ -1,0 +1,199 @@
+<html>
+<head>
+        <title>K. Abhijith Reddy - Portfolio</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #008080;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar a {
+            color: white !important;
+        }
+
+        .navbar a:hover {
+            color: #ffc107 !important;
+        }
+
+        section {
+            padding: 40px;
+            background-color: #FFFFFF;
+           
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            transition: all 0.3s ease;
+        }
+
+        img:hover {
+            filter: brightness(0.8);
+            transform: scale(1.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #343a40;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>K. Abhijith Reddy</h1>
+    <p>Welcome to my personal portfolio!</p>
+</header>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Hi, I'm K. Abhijith Reddy. I am passionate about technology and programming. In my free time, I enjoy playing cricket and exploring new coding challenges.</p>
+</section>
+
+
+<section id="education" class="container">
+    <h2>Education</h2>
+    <ul>
+        <li> I have completed my schooling at Tejaswi Concept School - Warangal, TG.</li>
+        <li>Currently studying B.Tech at SRM University - Amaravati, AP.</li>
+    </ul>
+</section>
+
+
+<section id="skills" class="container">
+    <h2>Skills</h2>
+    <ul>
+        <li>C++</li>
+        <li>HTML</li>
+    </ul>
+</section>
+
+
+<section id="projects" class="container">
+    <h2>Projects</h2>
+    <ul>
+        <li>Portfolio Website (HTML, Bootstrap)</li>
+        <li>Simple C++ Projects</li>
+    </ul>
+</section>
+
+
+<section id="gallery" class="container text-center">
+    <h2>Gallery</h2>
+    <div class="row">
+        <div class="col-md-4"><img src="pic07.JPG" alt="pic07" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="pic02.JPG" alt="pic02" class="img-fluid rounded"></div>
+        <div class="col-md-4"><img src="pic01.JPG" alt="pic01" class="img-fluid rounded"></div>
+    </div>
+</section>
+
+
+<section id="contact" class="container">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:abhijithreddy2006@gmail.com">abhijithreddy2006@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919652591756">+91 9652591756</a></p>
+</section>
+
+
+<section class="container">
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Your email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" placeholder="Type your message" rows="4" required></textarea>
+
+        <p>Would You Like to Reach Me Out?</p>
+        <input type="radio" id="yes" name="reachOut" value="yes"> <label for="yes">Yes</label>
+        <input type="radio" id="no" name="reachOut" value="no"> <label for="no">No</label>
+        
+        <br><br>
+        <input type="submit" value="Send">
+    </form>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(event) {
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+   
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        let email = document.getElementById('email').value.trim();
+        let message = document.getElementById('message').value.trim();
+        let reachOut = document.querySelector('input[name="reachOut"]:checked');
+        
+        if (!email || !message || !reachOut) {
+            alert('Please fill out all fields before submitting.');
+            return;
+        }
+
+        alert('Thank you for reaching out, ' + email + '! I will get back to you soon.');
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
